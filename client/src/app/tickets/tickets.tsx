@@ -17,7 +17,8 @@ const Tickets = () => {
     data: users = [],
   } = useGetUsers();
 
-  if (ticketsError || usersError) return <div>Something went wrong.</div>;
+  if (ticketsError || usersError)
+    return <div>{ticketsError?.message || usersError?.message}</div>;
 
   if (isLoadingTickets || isLoadingUsers) return <Spinner />;
 
