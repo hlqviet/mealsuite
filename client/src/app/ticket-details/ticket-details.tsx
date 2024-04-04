@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useGetTicket from '../../hooks/useGetTicket/useGetTicket';
 import useGetUser from '../../hooks/useGetUser/useGetUser';
 import Spinner from '../../components/Spinner/Spinner';
@@ -24,7 +24,12 @@ const TicketDetails = () => {
 
   if (!ticket) return <div>Ticket not found.</div>;
 
-  return <UserTicketDetails {...ticket} assigneeName={user?.name} />;
+  return (
+    <div>
+      <Link to="/">&larr; Go back</Link>
+      <UserTicketDetails {...ticket} assigneeName={user?.name} />
+    </div>
+  );
 };
 
 export default TicketDetails;
