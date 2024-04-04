@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import useGetTicket from '../../hooks/useGetTicket';
-import useGetUser from '../../hooks/useGetUser';
+import useGetTicket from '../../hooks/useGetTicket/useGetTicket';
+import useGetUser from '../../hooks/useGetUser/useGetUser';
 import Spinner from '../../components/Spinner/Spinner';
 import UserTicketDetails from '../../components/UserTicketDetails/UserTicketDetails';
 

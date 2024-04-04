@@ -1,6 +1,6 @@
 import Spinner from '../../components/Spinner/Spinner';
-import useGetTickets from '../../hooks/useGetTickets';
-import useGetUsers from '../../hooks/useGetUsers';
+import useGetTickets from '../../hooks/useGetTickets/useGetTickets';
+import useGetUsers from '../../hooks/useGetUsers/useGetUsers';
 import styles from './tickets.module.css';
 import TicketRow from '../../components/TicketRow/TicketRow';
 import { Link } from 'react-router-dom';

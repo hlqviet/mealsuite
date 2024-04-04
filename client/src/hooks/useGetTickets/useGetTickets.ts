@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getTickets } from '../api/ticket';
+import { getTickets } from '../../api/ticket';
 
 const useGetTickets = () => {
   return useQuery({

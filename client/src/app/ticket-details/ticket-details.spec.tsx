@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import TicketDetails from './ticket-details';
-import useGetTicket from '../../hooks/useGetTicket';
-import useGetUser from '../../hooks/useGetUser';
+import useGetTicket from '../../hooks/useGetTicket/useGetTicket';
+import useGetUser from '../../hooks/useGetUser/useGetUser';
 
-jest.mock('../../hooks/useGetTicket', () => ({
+jest.mock('../../hooks/useGetTicket/useGetTicket', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
 
-jest.mock('../../hooks/useGetUser', () => ({
+jest.mock('../../hooks/useGetUser/useGetUser', () => ({
   __esModule: true,
   default: jest.fn(),
 }));

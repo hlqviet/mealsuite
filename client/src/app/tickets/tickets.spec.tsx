@@ -2,15 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import Tickets from './tickets';
-import useGetTickets from '../../hooks/useGetTickets';
-import useGetUsers from '../../hooks/useGetUsers';
+import useGetTickets from '../../hooks/useGetTickets/useGetTickets';
+import useGetUsers from '../../hooks/useGetUsers/useGetUsers';
 
-jest.mock('../../hooks/useGetTickets', () => ({
+jest.mock('../../hooks/useGetTickets/useGetTickets', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
 
-jest.mock('../../hooks/useGetUsers', () => ({
+jest.mock('../../hooks/useGetUsers/useGetUsers', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
