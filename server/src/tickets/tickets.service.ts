@@ -18,7 +18,7 @@ export class TicketsService {
       id: 2,
       description: 'Move the desk to the new location',
       assigneeId: 1,
-      completed: false,
+      completed: true,
     },
   ];
 

@@ -1,14 +1,30 @@
-import styles from './ticket-details.module.css';
+import { useParams } from 'react-router-dom';
+import useGetTicket from '../../hooks/useGetTicket';
+import useGetUser from '../../hooks/useGetUser';
+import Spinner from '../../components/Spinner/Spinner';
+import UserTicketDetails from '../../components/UserTicketDetails/UserTicketDetails';
 
-/* eslint-disable-next-line */
-export interface TicketDetailsProps {}
+const TicketDetails = () => {
+  const { id } = useParams();
+  const {
+    error: ticketError,
+    isLoading: isLoadingTicket,
+    data: ticket,
+  } = useGetTicket(parseInt(id ?? '0', 10));
+  const {
+    error: userError,
+    isLoading: isLoadingUser,
+    data: user,
+  } = useGetUser(ticket?.assigneeId ?? 0);
 
-export function TicketDetails(props: TicketDetailsProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to TicketDetails!</h1>
-    </div>
-  );
-}
+  if (ticketError || userError)
+    return <div>{ticketError?.message || userError?.message}</div>;
+
+  if (isLoadingTicket || isLoadingUser) return <Spinner />;
+
+  if (!ticket) return <div>Ticket not found.</div>;
+
+  return <UserTicketDetails {...ticket} assigneeName={user?.name} />;
+};
 
 export default TicketDetails;
